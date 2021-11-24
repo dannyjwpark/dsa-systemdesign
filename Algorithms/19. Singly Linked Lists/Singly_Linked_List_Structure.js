@@ -1,3 +1,6 @@
+// singly linked list: superior to array in insertion and deletion
+// arrays: contain built-in index, whereas Linked Lists do not
+
 // piece of data - val
 //reference to next node - next
 
@@ -28,5 +31,16 @@ class SinglyLinkedList{
 var list = new SinglyLinkedList()
 list.push("HELLO")
 list.push("GOODBYE")
+
+
+
+
+// Big O of Singly Linked Lists
+// Insertion : O(1);
+// Removal: 
+  // best (removing from the beginning): O(1) 
+  // average/worst (removing at the end): O(N)
+// Searching: O(N)
+// Access: O(N)
 
 
