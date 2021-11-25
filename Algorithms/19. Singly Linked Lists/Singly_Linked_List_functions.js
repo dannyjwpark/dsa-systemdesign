@@ -13,7 +13,7 @@ class SinglyLinkedList{
     }
     // push: adding a new node from the end of the Linked list
     push(val){
-        var newNode = new Node(val);
+        let newNode = new Node(val);
         if(!this.head){
             this.head = newNode;
             this.tail = this.head;
@@ -28,8 +28,8 @@ class SinglyLinkedList{
     pop(){
         if(!this.head) return undefined;
 
-        var current = this.head;
-        var newTail = current;
+        let current = this.head;
+        let newTail = current;
         while(current.next){
             newTail = current;
             current = current.next;
@@ -45,7 +45,7 @@ class SinglyLinkedList{
     }
     // unshift: adding a new node to the beginning of the Linked List
     unshift(val){
-        var newNode = new Node(val);
+        let newNode = new Node(val);
         if(!this.head) {
             this.head = newNode;
             this.tail = this.head;
@@ -59,7 +59,7 @@ class SinglyLinkedList{
     shift(){
         if(!this.head) return undefined;
 
-        var currentHead = this.head;
+        let currentHead = this.head;
         this.head = currentHead.next;
         this.length--;
         if(this.length === 0){
@@ -70,8 +70,8 @@ class SinglyLinkedList{
     // get: retrieving a node by its position in the Linked list
     get(index){
         if(index < 0 || index >= this.length) return null;
-        var counter = 0;
-        var current = this.head;
+        let counter = 0;
+        let current = this.head;
         while(counter !== index){
             current = current.next;
             counter++;
@@ -80,7 +80,7 @@ class SinglyLinkedList{
     }
     // set: changing the value of a node based on its position in the Linked list
     set(index, val){
-        var foundNode = this.get(index);
+        let foundNode = this.get(index);
         if(foundNode){
             foundNode.val = val;
             return true;
@@ -93,10 +93,10 @@ class SinglyLinkedList{
         if(index === this.length) return !!this.push(val);
         if(index === 0) return !!this.unshift(val);
         
-        var newNode = new Node(val);
-        var prev = this.get(index - 1);
-        var temp = prev.next;
-        
+        let newNode = new Node(val);
+        let prev = this.get(index - 1);
+        let temp = prev.next;
+
         prev.next = newNode;
         newNode.next = temp;
         this.length++;
@@ -110,23 +110,23 @@ class SinglyLinkedList{
         if(index === this.length - 1) return this.pop();
 
         // get an element on previous index of input
-        var previousNode = this.get(index - 1);
-        var removed = previousNode.next;
+        let previousNode = this.get(index - 1);
+        let removed = previousNode.next;
         previousNode.next = removed.next;
         this.length--;
         return removed;
     }
     reverse(){
-      // assign head on a temp variable node
-      var node = this.head;
+      // assign head on a temp letiable node
+      let node = this.head;
       // make the current head to tail
       this.head = this.tail;
-      // make the tail the stored temp variable
+      // make the tail the stored temp letiable
       this.tail = node;
 
-      var next;
-      var prev = null;
-      for(var i = 0; i < this.length; i++){
+      let next;
+      let prev = null;
+      for(let i = 0; i < this.length; i++){
         next = node.next;
         node.next = prev;
         prev = node;
@@ -135,8 +135,8 @@ class SinglyLinkedList{
       return this;
     }
     print(){
-        var arr = [];
-        var current = this.head
+        let arr = [];
+        let current = this.head
         while(current){
             arr.push(current.val)
             current = current.next
@@ -148,7 +148,7 @@ class SinglyLinkedList{
 
 
 // push
-var list = new SinglyLinkedList()
+let list = new SinglyLinkedList()
 list.push("good");
 list.push("morning");
 list.push("danny");

@@ -11,7 +11,7 @@ class BinarySearchTree {
     this.root = null;
   }
   insert(value){
-    var newNode = new Node(value);
+    let newNode = new Node(value);
 
     // if there is no root, make the new node a root and return
     if(this.root === null){
@@ -20,7 +20,7 @@ class BinarySearchTree {
     }
 
     // traverse from root
-    var current = this.root;
+    let current = this.root;
     while(true){
       // if duplicate with current, return undefined
       if(value === current.value) return undefined;
@@ -43,7 +43,7 @@ class BinarySearchTree {
   }
   find(value){
     if(this.root === null) return false;
-    var current = this.root, found = false;
+    let current = this.root, found = false;
 
     while(current && !found){
       if(value < current.value){
@@ -59,7 +59,7 @@ class BinarySearchTree {
   }
   contains(value){
     if(this.root === null) return false;
-    var current = this.root, found = false;
+    let current = this.root, found = false;
 
     while(current && !found){
       if(value < current.value){
@@ -79,7 +79,7 @@ class BinarySearchTree {
 //   6     15
 // 3  8  13  20
 
-var tree = new BinarySearchTree();
+let tree = new BinarySearchTree();
 tree.insert(10)
 tree.insert(6)
 tree.insert(15)

@@ -22,13 +22,13 @@ class SinglyLinkedList{
     }
 }
 
-// var first = new Node("Hi")
+// let first = new Node("Hi")
 // first.next = new Node("there")
 // first.next.next = new Node("how")
 // first.next.next.next = new Node("are")
 // first.next.next.next.next = new Node("you")
 
-var list = new SinglyLinkedList()
+let list = new SinglyLinkedList()
 list.push("HELLO")
 list.push("GOODBYE")
 
