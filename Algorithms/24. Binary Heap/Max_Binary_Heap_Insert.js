@@ -31,3 +31,7 @@ heap.insert(55);
 
 
 
+// Big O
+// Insertion: O(log N)
+// Removal: O(log N)
+// search: O(N)
