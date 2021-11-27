@@ -64,9 +64,23 @@ g.addEdge("Hong Kong", "Tokyo");
 g.addEdge("Hong Kong", "Dallas");
 g.addEdge("Los Angeles", "Hong Kong");
 g.addEdge("Los Angeles", "Aspen");
+g.addVertex("Seoul");
+g.addEdge("Seoul", "Tokyo");
+g.addEdge("Seoul", "Hong Kong");
+g.removeVertex("Hong Kong");
+console.log(g);
 
+// Big O
 
-
+// | Operation      |  Adjacency List  |  Adjacency Matrix |
+// ---------------------------------------------------------
+// | Add Vertex     |        O(1)      |       O(|V^2|)    |
+// | Add Edge       |        O(1)      |         O(1)      |
+// | Remove Vertex  |    O(|V| + |E|)  |       O(|V^2|)    |
+// | Remove Edge    |       O(|E|)     |         O(1)      |
+// | Query          |    O(|V| + |E|)  |         O(1)      |
+// | Storage        |    O(|V| + |E|)  |       O(|V^2|)    |
+// ---------------------------------------------------------
 
 
 
