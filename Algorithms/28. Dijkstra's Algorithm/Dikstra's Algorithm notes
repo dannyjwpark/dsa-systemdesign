@@ -1,0 +1,11 @@
+Approach
+
+1. Everytime a new node is visited, node w/ smallest known distance to visit first is picked/
+
+2. Once moved to the node we are going to visit, look at each of its neighbors
+
+3. For each neighboring node, distance is calculated by summing the total edges 
+that lead to the node we're checking from the starting node.
+
+4. If the new total distance to a node is less than the previous total, we 
+store the new shorter distance for that node.
