@@ -82,5 +82,13 @@ console.log(g);
 // | Storage        |    O(|V| + |E|)  |       O(|V^2|)    |
 // ---------------------------------------------------------
 
+// adjacnecy list
+  // + can take up less space (in sparse graphs)
+  // + faster to iterate over all edges
+  // - can be slower to llopup specific edge
 
+// adjacency matrix
+  // - takes up more space (in sparse graphs)
+  // - slower to iterate over all edges
+  // + faster to lookup specific edge
 
