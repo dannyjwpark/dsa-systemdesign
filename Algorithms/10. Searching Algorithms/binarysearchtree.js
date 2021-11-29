@@ -4,9 +4,9 @@ const { off } = require("process");
 
 // we need to create the constructor function for each node
 function Node(data){
-    this.data = data;
-    this.left = null;
-    this.right = null;
+  this.data = data;
+  this.left = null;
+  this.right = null;
 }
 
 // The tree is a class, which constructor contains the value 
@@ -14,134 +14,130 @@ function Node(data){
     // there are no nodes in the tree until we add them! 
 
 class Tree {
-    constructor() {
-        this.root = null;
-    }
+  constructor() {
+    this.root = null;
+  }
 
-// Adding a node
-
-
-addNode(data) {
+  // Adding a node
+  addNode(data) {
     const newNode = new Node(data);
     if(!this.root){
-        this.root = newNode;
+      this.root = newNode;
     } else{
-        this.insertNode(this.root, newNode)
+      this.insertNode(this.root, newNode)
     }
-}
+  }
 
-insertNode(node, newNode){
+  insertNode(node, newNode){
     if (newNode.data < node.data) {
-        if (!node.left) {
-            node.left = newNode;
-        } else {
-            this.insertNode(node.left, newNode)
-        }
+      if (!node.left) {
+        node.left = newNode;
+      } else {
+        this.insertNode(node.left, newNode)
+      }
     } else {
-        if (!node.right) {
-            node.right = newNode;
-        } else {
-            this.insertNode(node.right, newNode)
-        }
+      if (!node.right) {
+        node.right = newNode;
+      } else {
+        this.insertNode(node.right, newNode)
+      }
     }
-}
-remove(data){
+  }
+  remove(data){
     this.root = this.removeNode(this.root, data);
-}
+  }
 
-removeNode(node, data){
+  removeNode(node, data){
     if(!node){
-        return null
+      return null
     }
     if(data < node.data){
-        node.left = this.removeNode(node.left, data);
-        return node;
+      node.left = this.removeNode(node.left, data);
+      return node;
     } else if (data > node.data){
-        node.right = this.removeNode(node.right, data);
-        return node;
+      node.right = this.removeNode(node.right, data);
+      return node;
     } else{
-        if(!node.left && node.right){
-            node= null;
-            return node;
-        }
-        if (!node.left){
-            node = node.right;
-            return node;
-        }
-        if (!node.right){
-            node = node.left;
-            return node;
-        }
-
-        let min = this.findMinNode(node.right);
-        node.data = min.data;
-        node.right = this.removeNode(node.right, min.data);
+      if(!node.left && node.right){
+        node= null;
         return node;
+      }
+      if (!node.left){
+        node = node.right;
+        return node;
+      }
+      if (!node.right){
+        node = node.left;
+        return node;
+      }
+
+      let min = this.findMinNode(node.right);
+      node.data = min.data;
+      node.right = this.removeNode(node.right, min.data);
+      return node;
     }
-}
+  }
 
-// traversing
+  // traversing
 
-inOrder(data){
+  inOrder(data){
     if(node){
-        this.inorder(node.left);
-        console.log(node.data);
-        this.inorder(node.right);
+      this.inorder(node.left);
+      console.log(node.data);
+      this.inorder(node.right);
     }
-}
+  }
 
-preOrder(data) {
+  preOrder(data) {
     if(node){
-        console.log(node.data);
-        this.inOrder(node.left);
-        this.inOrder(node.right);
+      console.log(node.data);
+      this.inOrder(node.left);
+      this.inOrder(node.right);
     }
-}
+  }
 
-postOrder(data){
+  postOrder(data){
     if(node){
-        this.inOrder(node.left);
-        this.inOrder(node.right);
-        console.log(node.data);
+      this.inOrder(node.left);
+      this.inOrder(node.right);
+      console.log(node.data);
     }
-}
+  }
 
-traverseBFS(){
+  traverseBFS(){
     if(!this.root){
-        return
+      return;
     }
     this.queue = [];
     this.queue.push(this.root);
 
     while (this.queue.length){
-        const node = this.queue.shift();
-        if (node.left){
-            this.queue.push(node.left);
-        }
-        if(node.right){
-            this.queue.push(node.right);
-        }
-        return node.data;
+      const node = this.queue.shift();
+      if (node.left){
+        this.queue.push(node.left);
+      }
+      if(node.right){
+        this.queue.push(node.right);
+      }
+      return node.data;
     }
-}
+  }
 
-getMin(){
+  getMin(){
     let node = this.root;
     while (node.left){
-        node= node.left;
+      node= node.left;
     }
     return node.data
-}
+  }
 
-getMax(){
+  getMax(){
     let node = this.root;
     while (node.right) {
-        node = node.right;
+      node = node.right;
     }
     return node.data
-}
-
-
+  }
 }
 
 
