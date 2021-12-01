@@ -1,3 +1,6 @@
+// multiple pointers
+// Big O: O(N)
+
 function countUniqueValues(arr){
     if(arr.length === 0) return 0;
     var i = 0;
