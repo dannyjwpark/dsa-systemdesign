@@ -2,7 +2,7 @@
   // visit every sibling node before visiting child
 
 // strategy:
-  // create a queue & a letiable to store the values of nodes visited
+  // create a QUEUE & a variable to store the values of nodes visited
   // place the root node in the queue
   // loop as long as there is anything in the queue
     // dequeue a node from the queue & push the valuee of the node into letiable that store the nodes
@@ -26,13 +26,16 @@ class BinarySearchTree {
   constructor(){
     this.root = null;
   }
+
   insert(value){
     let newNode = new Node(value);
     if(this.root === null){
       this.root = newNode;
       return this;
     }
+
     let current = this.root;
+
     while(true){
       if(value === current.value) return undefined;
       if(value < current.value){
@@ -50,6 +53,7 @@ class BinarySearchTree {
       }
     }
   }
+
   find(value){
     if(this.root === null) return false;
     let current = this.root,
@@ -66,6 +70,7 @@ class BinarySearchTree {
     if(!found) return undefined;
     return current;
   }
+
   contains(value){
     if(this.root === null) return false;
     let current = this.root,
@@ -81,17 +86,18 @@ class BinarySearchTree {
     }
     return false;
   }
+
   BFS(){
     let node = this.root,
-        data = [],
-        queue = [];
+      data = [],
+      queue = [];
     queue.push(node);
 
     while(queue.length){
-        node = queue.shift();
-        data.push(node.value);
-        if(node.left) queue.push(node.left);
-        if(node.right) queue.push(node.right);
+      node = queue.shift();
+      data.push(node.value);
+      if(node.left) queue.push(node.left);
+      if(node.right) queue.push(node.right);
     }
     return data;
   }
