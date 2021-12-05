@@ -24,6 +24,9 @@ var connect = function(root) {
     let next = [];
     while(queue.length){
       let node = queue.shift();
+      // currently, queue is empty with node being root, so next would be null
+      // next iteration, root.left.next would be root.right
+      // next, root.right.next would be null
       node.next = queue[0] || null;
       if(node.left){
         next.push(node.left);
