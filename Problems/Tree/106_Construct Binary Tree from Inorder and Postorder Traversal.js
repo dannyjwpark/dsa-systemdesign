@@ -19,7 +19,7 @@ var buildTree = function(inorder, postorder) {
         // base case
         if (start > end) return null;
         
-        // last node of postorder is always be root of a subtree
+        // last node of postorder is always a root of a subtree
         let val = postorder.pop();
         let root = new TreeNode(val);
         
