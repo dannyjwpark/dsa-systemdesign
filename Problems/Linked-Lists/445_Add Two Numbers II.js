@@ -14,6 +14,7 @@ var addTwoNumbers = function(l1, l2) {
     let stack1 = [];
     let stack2 = [];
     
+    // push each nodes of lists to hashes until node's next is null
     while(l1) {
         stack1.push(l1.val);
         l1 = l1.next;
@@ -26,6 +27,7 @@ var addTwoNumbers = function(l1, l2) {
     // create a new node to build added numbers' list
     let l3 = new ListNode(0);
     
+    // reversely pushing in the last elements' sums
     while(stack1.length || stack2.length){
         let sum = 0;
         
@@ -33,7 +35,7 @@ var addTwoNumbers = function(l1, l2) {
         if(stack1.length) sum += stack1.pop();
         if(stack2.length) sum += stack2.pop();
         
-        sum += l3.val; // initially 0
+        sum += l3.val; 
         l3.val = sum % 10;
         
         let head = new ListNode(Math.floor(sum/10));    // /10 to pass on the ten's digit from previous node
