@@ -1,0 +1,18 @@
+Tree: an undirected graph w/ no cycles
+  - connected graph with N nodes & N-1 nodes
+
+Rooted tree: tree with a designated root node where every edge either points away from or towards the root node
+  - arborescence (out-tree) : graph where edges point away from the root 
+  - anti-arborescence (in-tree) : graph where edges point toward the root
+
+Directed Acyclic Graphs (DAGS) : directed graphs with no cycles
+  - all out-tress are DAGS, but not all DAGs are out-trees
+
+Bipartite Graph: graph whose vertices can be split into 2 independent groups U,V such that every edge connects betweens U and V
+  -   graph w/ 2 colorable nodes, or there  is no odd-length cycle
+
+Complete graph: graph w/ a unique ege between every paid of nodes
+  - graph w/ n vertices is denoted as the graph Kn 
+  - seen as worst type of graph (in performance)
+
+ 
