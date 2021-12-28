@@ -1,0 +1,32 @@
+Consider the set of keys 𝐾={0,1,...,100} and a hash table where the number of buckets is 𝑚=12. 
+Since 3 is a factor of 12, the keys that are multiples of 3 will be hashed to buckets that are 
+multiples of 3:
+
+  Keys {0,12,24,36,...} will be hashed to bucket 0.
+  Keys {3,15,27,39,...} will be hashed to bucket 3.
+  Keys {6,18,30,42,...} will be hashed to bucket 6.
+  Keys {9,21,33,45,...} will be hashed to bucket 9.
+
+If 𝐾 is uniformly distributed (i.e., every key in 𝐾 is equally likely to occur), 
+then the choice of 𝑚 is not so critical. But, what happens if 𝐾 is not uniformly distributed? 
+
+Imagine that the keys that are most likely to occur are the multiples of 3. 
+In this case, all of the buckets that are not multiples of 3 will be empty with high probability 
+(which is really bad in terms of hash table performance).
+
+This situation is more common that it may seem. 
+Imagine, for instance, that you are keeping track of objects based on where they are stored in memory. 
+If your computer`s word size is four bytes, then you will be hashing keys that are multiples of 4. 
+Needless to say that choosing 𝑚 to be a multiple of 4 would be a terrible choice: you would have 3𝑚/4 buckets completely empty, and all of your keys colliding in the remaining 𝑚/4 buckets.
+
+
+
+In general:
+
+Every key in 𝐾 that shares a common factor with the number of buckets 𝑚 will be hashed to a bucket 
+that is a multiple of this factor.
+
+Therefore, to minimize collisions, it is important to reduce the number of common factors 
+between 𝑚 and the elements of 𝐾. How can this be achieved? 
+
+By choosing 𝑚 to be a number that has very few factors: a prime number.

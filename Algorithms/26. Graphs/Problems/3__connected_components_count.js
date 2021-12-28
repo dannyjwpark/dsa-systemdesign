@@ -37,6 +37,7 @@ const explore = (graph, current, visited) => {
     explore(graph, neighbor, visited);
   }
 
+  // after iterating every neighbor nodes of a specific node, return true to exit the DFS
   return true;
 }
 
@@ -47,3 +48,4 @@ console.log(connectedComponentsCount(graph1));
 
 // Time complexity: O(e)
 // Space complexity: O(n)
+
