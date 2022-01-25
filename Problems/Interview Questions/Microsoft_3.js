@@ -26,7 +26,8 @@ function regexMatch(string, pattern){
         } else if(pat[0] !== str[0] && pat[1] === '*'){
             p= pat.slice(2);
         } else {
-            return false;
+          console.log("false");
+          return false;
         }
 
         // if p[0] = '.', move both pointers
@@ -36,6 +37,7 @@ function regexMatch(string, pattern){
     
     }
 
+    console.log("true");
     return true
 }
 
